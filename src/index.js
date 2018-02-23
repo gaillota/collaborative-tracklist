@@ -6,6 +6,8 @@ import configureStore from './store/configureStore'
 import registerServiceWorker from './registerServiceWorker'
 import App from './App'
 
+import './index.css'
+
 const initialState = {}
 const store = configureStore(initialState)
 const MOUNT_NODE = document.getElementById('root')
