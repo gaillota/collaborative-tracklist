@@ -2,13 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const P = styled.p`
-    text-align: center;
+export default styled.div`
     font-size: 20px;
+    color: #333;
 `
-
-const Loading = () => (
-    <P>Loading...</P>
-)
-
-export default Loading

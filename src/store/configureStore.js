@@ -3,6 +3,7 @@ import { fromJS } from 'immutable'
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 
+import apiMiddleware from '../middlewares/api.middleware'
 import createReducer from '../reducers'
 
 export default function configureStore(initialState = {}) {
@@ -11,6 +12,7 @@ export default function configureStore(initialState = {}) {
     
     const middlewares = [
         // App middlewares
+        apiMiddleware,
         
         // Package middlewares
         thunk,
