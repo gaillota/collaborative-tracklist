@@ -20,11 +20,11 @@ import TrackActions from '../../../components/TrackActions'
 import TrackFooter from '../../../components/TrackFooter'
 import TrackPendingTime from '../../../components/TrackPendingTime'
 import TrackAdder from '../../../components/TrackAdderName'
-import PriorityButton from '../../../components/PriorityButton'
+import PriorityButton from '../../../components/TrackPriorityButton'
 import UpvoteButton from '../../../components/UpvoteButton'
 import VotesCount from '../../../components/VotesCount'
 import UpvoteIcon from '../../../components/UpvoteIcon'
-import PriorityIcon from '../../../components/PriorityIcon'
+import PriorityIcon from '../../../components/TrackPriorityIcon'
 
 class TrackListItem extends React.Component {
     handlePriorityClick = () => {
@@ -42,15 +42,23 @@ class TrackListItem extends React.Component {
         let seconds = duration - (hours * 3600) - (minutes * 60)
         let result = ''
         
-        if (hours < 10 && hours > 0) {
-            result += '0' + hours + ' h'
+        if (hours > 0) {
+            if (hours < 10) {
+                hours = '0' + hours
+            }
+            result += hours + ' h '
         }
-        if (minutes < 10 && minutes > 0) {
-            result += '0' + minutes + ' min'
+        if (minutes > 0) {
+            if (minutes < 10) {
+                minutes = '0' + minutes
+            }
+            result += minutes + ' min '
         }
         if (seconds < 10) {
-            result += '0' + seconds + ' s'
+            seconds = '0' + seconds
         }
+        
+        result += seconds + ' s'
         
         return result
     }

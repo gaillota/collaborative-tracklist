@@ -31,12 +31,13 @@ const makeSortedTracksSelector = () => createSelector(
 const makeComputedTracksSelector = () => createSelector(
     makeSortedTracksSelector(),
     (sortedTracks) => {
-        let totalDuration = 0
+        // Time remaining for playing song
+        let timeReminaing = 30
         return sortedTracks.map((track) => {
+            const newDuration = timeReminaing
             const { duration } = track
-            const newDuration = totalDuration
             // eslint-disable-next-line no-const-assign
-            totalDuration += duration
+            timeReminaing += duration
             
             return {
                 ...track,

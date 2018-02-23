@@ -13,9 +13,10 @@ export default styled.button`
     background: #343434;
     border: 0;
     color: #fff;
+    transition: box-shadow 150ms linear;
     
     &:hover {
-        box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.4);
+        box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.3);
     }
     
     &:active, &:focus {
